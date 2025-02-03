@@ -6,14 +6,15 @@ const port = 3000
 
 const jsonParser = bodyParser.json()
 
-const logRequest = ({ method, originalUrl, query, body, param }) => {
+const logRequest = ({ method, originalUrl, query, body, param, headers }) => {
   console.log(`======================== [${method}] ${originalUrl} ========================`)
   const log = {
     method,
     originalUrl,
     query,
     body,
-    param
+    param,
+    headers
   }
 
   console.log(JSON.stringify(log))
